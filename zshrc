@@ -8,5 +8,7 @@ KEYTIMEOUT=1
 unsetopt hist_ignore_dups
 setopt hist_find_no_dups
 setopt nosharehistory
-alias ack=ack-grep
+#alias ack=ack-grep
 unsetopt correctall
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

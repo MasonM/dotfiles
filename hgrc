@@ -1,0 +1,8 @@
+[ui]
+username=Mason Malone <mason@masonm.org>
+
+[extensions]
+hgext.transplant=
+hgext.record=
+hgext.convert=
+hgext.mq =

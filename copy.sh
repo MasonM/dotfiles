@@ -6,5 +6,5 @@ for i in $DOTFILES_DIR/*; do
 	[ "$i" = "$0" ] && continue;
 	DOTFILE=".`basename $i`"
 	echo "Copying $DOTFILE"
-	cp -n $DOTFILES_DIR/$i ~/$DOTFILE
+	cp -n $i ~/$DOTFILE
 done

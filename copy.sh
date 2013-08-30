@@ -10,5 +10,5 @@ for i in $DOTFILES_DIR/*; do
 		continue;
 	fi
 	echo "Copying $DOTFILE"
-	cp -n $i ~/$DOTFILE
+	cp -Rn $i ~/$DOTFILE
 done

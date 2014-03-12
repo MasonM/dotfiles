@@ -1,3 +1,5 @@
+[core]
+	editor = vim
 [user]
 	name = Mason Malone
 	email = mason@masonm.org
@@ -13,3 +15,7 @@
 	sub = submodule
 	pre = pull --rebase
 	dh = diff HEAD
+	sta-pop-dirty = !git stash show -p | git apply && git stash drop
+	up = !git remote update -p; git merge --ff-only @{u}
+[push]
+	default = matching

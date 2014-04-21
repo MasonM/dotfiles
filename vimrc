@@ -16,6 +16,7 @@ set wildmenu
 filetype indent on              " Enable filetype-specific indenting
 set pastetoggle=<C-T>
 let g:syntastic_puppet_checkers=['puppetlint']
+let g:syntastic_puppet_puppetlint_args='--no-hard_tabs-check --no-2sp_soft_tabs-check'
 execute pathogen#infect()
 "source /home/mrmalone/php-doc.vim
 "inoremap <C-L> <ESC>:call PhpDocSingle()<CR>i

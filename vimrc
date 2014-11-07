@@ -2,6 +2,7 @@ set nocompatible
 filetype on                     " recognize filetypes
 syntax on
 filetype plugin indent on
+set viminfo+=<500               " Maximum number of lines saved for each register.
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set smartcase
 set history=50                  " keep 50 lines of command line history

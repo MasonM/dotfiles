@@ -17,5 +17,6 @@
 	dh = diff HEAD
 	sta-pop-dirty = !git stash show -p | git apply && git stash drop
 	up = !git remote update -p; git merge --ff-only @{u}
+	rbi = rebase -i
 [push]
 	default = matching

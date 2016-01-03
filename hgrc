@@ -1,8 +1,16 @@
 [ui]
-username=Mason Malone <mason@masonm.org>
+username=Mason Malone <mason.malone@gmail.com>
+
+[pager]
+pager = LESS=FRSXQ less
+quiet = True
 
 [extensions]
 hgext.transplant=
 hgext.record=
 hgext.convert=
 hgext.mq =
+hggit =
+shelve=
+color =
+pager =

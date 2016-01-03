@@ -2,7 +2,6 @@ set nocompatible
 filetype on                     " recognize filetypes
 syntax on
 filetype plugin indent on
-set viminfo+=<500               " Maximum number of lines saved for each register.
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set smartcase
 set history=50                  " keep 50 lines of command line history
@@ -17,7 +16,9 @@ set wildmenu
 filetype indent on              " Enable filetype-specific indenting
 set pastetoggle=<C-T>
 let g:syntastic_puppet_checkers=['puppetlint']
-let g:syntastic_puppet_puppetlint_args='--no-hard_tabs-check --no-2sp_soft_tabs-check'
+let g:syntastic_puppet_puppetlint_args='--no-hard_tabs-check --no-2sp_soft_tabs-check --no-80chars-check'
+let g:pyindent_open_paren = '&sw'
+let g:pyindent_continue = '&sw'
 execute pathogen#infect()
 "source /home/mrmalone/php-doc.vim
 "inoremap <C-L> <ESC>:call PhpDocSingle()<CR>i
@@ -26,3 +27,4 @@ execute pathogen#infect()
 vnoremap <C-J> :!fmt -80<CR>
 "source /usr/share/vim/vim70/syntax/php.vim
 "source /usr/share/vim/vim70/indent/php.vim
+au BufNewFile,BufRead *.applescript set filetype=applescript

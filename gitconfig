@@ -18,5 +18,8 @@
 	sta-pop-dirty = !git stash show -p | git apply && git stash drop
 	up = !git remote update -p; git merge --ff-only @{u}
 	rbi = rebase -i
+	diffmin = diff --find-renames --find-copies --find-copies-harder --break-rewrites --color --minimal
 [push]
 	default = matching
+[branch]
+	autosetupmerge = true

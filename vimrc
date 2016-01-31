@@ -14,9 +14,9 @@ set background=dark
 set textwidth=100
 set wildmenu
 filetype indent on              " Enable filetype-specific indenting
-set pastetoggle=<C-T>
+set pastetoggle=<C-P>
 let g:syntastic_puppet_checkers=['puppetlint']
-let g:syntastic_puppet_puppetlint_args='--no-hard_tabs-check --no-2sp_soft_tabs-check --no-80chars-check'
+let g:syntastic_puppet_puppetlint_args='--no-80chars-check'
 let g:pyindent_open_paren = '&sw'
 let g:pyindent_continue = '&sw'
 execute pathogen#infect()

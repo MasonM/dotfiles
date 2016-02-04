@@ -1,3 +1,4 @@
 --type-set=puppet=.pp
 --type-set=haml=.haml
 --type-set=phtml=.phtml
+--type-set=erb=.erb

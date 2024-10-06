@@ -1,25 +1,58 @@
 [core]
-	editor = vim
+        editor = vim
+        pager = delta --diff-so-fancy --max-line-length 0
 [user]
-	name = Mason Malone
-	email = mason@masonm.org
+        name = Mason Malone
+        email = mason@masonm.org
 [http]
-	sslVerify=false
+        sslVerify=false
 [alias]
-	st = status
-	di = diff
-	co = checkout
-	ci = commit
-	br = branch
-	sta = stash
-	sub = submodule
-	pre = pull --rebase
-	dh = diff HEAD
-	sta-pop-dirty = !git stash show -p | git apply && git stash drop
-	up = !git remote update -p; git merge --ff-only @{u}
-	rbi = rebase -i
-	diffmin = diff --find-renames --find-copies --find-copies-harder --break-rewrites --color --minimal
+        st = status
+        lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oe '[^ ]+ ~ .*' | awk -f~ '!seen[$1]++' | head -n 10 | awk -f' ~ head@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+        di = diff
+        setmain = remote set-head origin main
+        main = !git symbolic-ref refs/remotes/origin/head | cut -d'/' -f4
+        #dm = "!f(){ git diff upstream/$(git main) $@;}; f"
+        dm = "!f(){ git diff --merge-base upstream/$(git main) $@;}; f"
+        com = "!f(){ git checkout $(git main) $@;}; f"
+        rbim = "!f(){ git rebase -i $(git main) $@;}; f"
+        pum = "!f(){ git pull upstream $(git main) $@;}; f"
+        co = checkout
+        ci = commit
+        br = branch
+        sta = stash
+        stap = stash push
+        sub = submodule
+        pre = pull --rebase
+        dh = diff head
+        sta-pop-dirty = !git stash show -p | git apply && git stash drop
+        up = !git remote update -p; git merge --ff-only @{u}
+        rbi = rebase -i
+        rbc = rebase --continue
+        diffmin = diff --find-renames --find-copies --find-copies-harder --break-rewrites --color --minimal
+        fix = commit -a --amend --no-edit
+        pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+        pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -d $branch ; done"
+        br-clean = "!git for-each-ref refs/heads/ '--format=%(refname:short)' | while read branch; do mergebase=$(git merge-base $(git main) $branch) && [[ $(git cherry $(git main) $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergebase -m _)) == "-"* ]] && echo \"removing $branch\" && git branch -d $branch; done"
+        brl = br --sort=committerdate
+        fu = fetch upstream
+        pf = push --force-with-lease
+        rh = reset --hard head
 [push]
-	default = matching
+        default = simple
 [branch]
-	autosetupmerge = true
+        autosetupmerge = true
+[grep]
+        patternType = perl
+
+[pull]
+        ff = only
+[merge]
+        conflictstyle = zdiff3
+[rebase]
+        #updateRefs = true
+[submodule]
+        recurse = true
+[status]
+        submoduleSummary = true
+

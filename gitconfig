@@ -3,7 +3,8 @@
         pager = delta --diff-so-fancy --max-line-length 0
 [user]
         name = Mason Malone
-        email = mason@masonm.org
+        #email = mason@masonm.org
+        email = 651224+MasonM@users.noreply.github.com
 [http]
         sslVerify=false
 [alias]
@@ -11,7 +12,7 @@
         lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oe '[^ ]+ ~ .*' | awk -f~ '!seen[$1]++' | head -n 10 | awk -f' ~ head@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
         di = diff
         setmain = remote set-head origin main
-        main = !git symbolic-ref refs/remotes/origin/head | cut -d'/' -f4
+        main = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
         #dm = "!f(){ git diff upstream/$(git main) $@;}; f"
         dm = "!f(){ git diff --merge-base upstream/$(git main) $@;}; f"
         com = "!f(){ git checkout $(git main) $@;}; f"
@@ -24,7 +25,7 @@
         stap = stash push
         sub = submodule
         pre = pull --rebase
-        dh = diff head
+        dh = diff HEAD
         sta-pop-dirty = !git stash show -p | git apply && git stash drop
         up = !git remote update -p; git merge --ff-only @{u}
         rbi = rebase -i
@@ -37,7 +38,7 @@
         brl = br --sort=committerdate
         fu = fetch upstream
         pf = push --force-with-lease
-        rh = reset --hard head
+        rh = reset --hard HEAD
 [push]
         default = simple
 [branch]

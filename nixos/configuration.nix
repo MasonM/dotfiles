@@ -81,10 +81,13 @@
     #];
   };
 
-  programs.zsh.enable = true;
-  programs.firefox.enable = true;
-  programs.steam.enable = true;
-  programs.vim.enable = true;
+  programs = {
+    zsh.enable = true;
+    firefox.enable = true;
+    steam.enable = true;
+    vim.enable = true;
+    ssh.startAgent = true;
+  };
   virtualisation.docker.enable = true;
 
   # List packages installed in system profile.

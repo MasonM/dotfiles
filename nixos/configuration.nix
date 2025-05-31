@@ -71,7 +71,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.masonm = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel" # Enable ‘sudo’ for the user.
+      "docker"
+    ];
     shell = pkgs.zsh;
     #packages = with pkgs; [
     #  tree
@@ -82,6 +85,7 @@
   programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.vim.enable = true;
+  virtualisation.docker.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -95,12 +99,12 @@
     jq
     bat
     unzip
+    borgbackup
 
     # development
     gnumake
     git
     delta
-    docker
     gh
 
     # languages

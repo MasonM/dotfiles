@@ -94,8 +94,10 @@
     gnupg
     jq
     bat
+    unzip
 
     # development
+    gnumake
     git
     delta
     docker
@@ -118,6 +120,7 @@
     transmission_4
     gimp3
     lyx
+    kdePackages.partitionmanager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

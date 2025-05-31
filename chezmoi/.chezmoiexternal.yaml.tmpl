@@ -1,0 +1,24 @@
+{{- if ne .chezmoi.hostname "masons-mbp" }}
+
+".local/bin/delta":
+  type: archive-file
+  url: "https://github.com/dandavison/delta/releases/download/{{ .versions.delta }}/delta-{{ .versions.delta }}-{{ .uname_arch }}-unknown-{{ .chezmoi.os }}{{ .pkg_runtime }}.tar.gz"
+  path: "delta"
+  executable: true
+  stripComponents: 1
+
+".local/bin/atuin":
+  type: archive-file
+  url: "https://github.com/atuinsh/atuin/releases/download/{{ .versions.atuin }}/atuin-{{ .uname_arch }}-unknown-{{ .chezmoi.os }}{{ .pkg_runtime }}.tar.gz"
+  path: "atuin"
+  executable: true
+  stripComponents: 1
+
+".local/bin/hyperfine":
+  type: archive-file
+  url: "https://github.com/sharkdp/hyperfine/releases/download/v{{ .versions.hyperfine }}/hyperfine-v{{ .versions.hyperfine }}-{{ .uname_arch }}-unknown-{{ .chezmoi.os}}{{ .pkg_runtime }}.tar.gz"
+  path: "hyperfine"
+  executable: true
+  stripComponents: 1
+
+{{ end }}

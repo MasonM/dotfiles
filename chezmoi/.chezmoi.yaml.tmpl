@@ -1,0 +1,12 @@
+{{- /* https://www.chezmoi.io/reference/configuration-file/variables/ */ -}}
+
+
+data:
+  uname_arch: "{{ output "uname" "-m" | trim }}"
+{{ if eq .chezmoi.os "darwin" }}
+  platform: "apple"
+  pkg_runtime: ""
+{{ else }}
+  platform: "unknown"
+  pkg_runtime: "-gnu"
+{{ end }}

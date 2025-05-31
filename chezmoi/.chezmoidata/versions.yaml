@@ -1,0 +1,10 @@
+versions:
+  # https://github.com/atuinsh/atuin
+  atuin: v18.4.0
+  # https://github.com/dandavison/delta
+  delta: 0.18.2
+  # https://github.com/junegunn/fzf
+  fzf: 0.60.0
+  # https://github.com/sharkdp/hyperfine
+  hyperfine: 1.19.0
+

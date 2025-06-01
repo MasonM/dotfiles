@@ -15,6 +15,13 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [
+    # https://bbs.archlinux.org/viewtopic.php?pid=2221728#p2221728
+    "amdgpu.dcdebugmask=0x10"
+    # Workaround for https://gitlab.freedesktop.org/drm/amd/-/issues/3863
+    # https://old.reddit.com/r/linux_gaming/comments/1f79obl/amdgpu_users_avoid_updating_linuxfirmware_right/
+    #"pcie_port_pm=off"
+  ];
   boot.initrd.luks.devices.crypted.device = "/dev/disk/by-uuid/1cd25d93-9e12-4bd6-8840-1541e50b439a";
 
   # networking.hostName = "nixos"; # Define your hostname.

@@ -8,18 +8,27 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/amdgpu_patch.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_6_13;
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [
+    # https://discussion.fedoraproject.org/t/freezing-amd-gpu-dual-boot-windows/120171/4
+    #"amdgpu.ppfeaturemask=0xfff7ffff"
+    #"amd_pstate=active"
+    # https://www.reddit.com/r/linux4noobs/comments/1ahb8pf/what_exactly_does_amdgpuppfeaturemask0xfffd3fff_do/
+    #"amdgpu.ppfeaturemask=0xfffd3fff"
+    # https://gitlab.freedesktop.org/drm/amd/-/issues/3863#note_2723629
+    #"amdgpu.gfxoff=1"
     # https://bbs.archlinux.org/viewtopic.php?pid=2221728#p2221728
-    "amdgpu.dcdebugmask=0x10"
+    #"amdgpu.dcdebugmask=0x10"
     # Workaround for https://gitlab.freedesktop.org/drm/amd/-/issues/3863
-    # https://old.reddit.com/r/linux_gaming/comments/1f79obl/amdgpu_users_avoid_updating_linuxfirmware_right/
+    # https://old.reddit.com/r/linux_gaming/comments/2f79obl/amdgpu_users_avoid_updating_linuxfirmware_right/
     #"pcie_port_pm=off"
   ];
   boot.initrd.luks.devices.crypted.device = "/dev/disk/by-uuid/1cd25d93-9e12-4bd6-8840-1541e50b439a";

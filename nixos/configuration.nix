@@ -118,7 +118,10 @@
     jq
     bat
     unzip
+
+    # system
     borgbackup
+    lm_sensors
 
     # development
     gnumake

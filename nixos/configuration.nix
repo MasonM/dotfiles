@@ -135,18 +135,23 @@
     php
 
     # desktop
-    google-chrome
-    thunderbird
     keepassxc
     vscode
-    yacreader
     libreoffice
-    vlc
     workrave
-    transmission_4
-    gimp3
     lyx
     kdePackages.partitionmanager
+
+    # desktop - internet
+    google-chrome
+    thunderbird
+    transmission_4-qt
+
+    # desktop - multimedia
+    vlc
+    gimp3
+    yacreader
+    libsForQt5.qt5.qtimageformats # webp support for yacreader
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

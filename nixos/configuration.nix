@@ -8,37 +8,21 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # Workaround system freeze:
+      # https://wiki.nixos.org/wiki/AMD_GPU#System_Hang_with_Vega_Graphics_(and_select_GPUs)
       ./modules/amdgpu_patch.nix
     ];
+  boot.kernelPackages = pkgs.linuxPackages_6_13;
 
   nixpkgs.config.allowUnfree = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_13;
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [
-    # https://discussion.fedoraproject.org/t/freezing-amd-gpu-dual-boot-windows/120171/4
-    #"amdgpu.ppfeaturemask=0xfff7ffff"
-    #"amd_pstate=active"
-    # https://www.reddit.com/r/linux4noobs/comments/1ahb8pf/what_exactly_does_amdgpuppfeaturemask0xfffd3fff_do/
-    #"amdgpu.ppfeaturemask=0xfffd3fff"
-    # https://gitlab.freedesktop.org/drm/amd/-/issues/3863#note_2723629
-    #"amdgpu.gfxoff=1"
-    # https://bbs.archlinux.org/viewtopic.php?pid=2221728#p2221728
-    #"amdgpu.dcdebugmask=0x10"
-    # Workaround for https://gitlab.freedesktop.org/drm/amd/-/issues/3863
-    # https://old.reddit.com/r/linux_gaming/comments/2f79obl/amdgpu_users_avoid_updating_linuxfirmware_right/
-    #"pcie_port_pm=off"
-  ];
-  boot.initrd.luks.devices.crypted.device = "/dev/disk/by-uuid/1cd25d93-9e12-4bd6-8840-1541e50b439a";
+  boot = {
+    # Use the systemd-boot EFI boot loader.
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    initrd.luks.devices.crypted.device = "/dev/disk/by-uuid/1cd25d93-9e12-4bd6-8840-1541e50b439a";
+  };
 
-  # networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
   hardware.bluetooth = {
@@ -46,19 +30,6 @@
     powerOnBoot = true;
   };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
   services = {
     #xserver.enable = true;
     desktopManager.plasma6.enable = true;
@@ -71,21 +42,6 @@
     };
   };
 
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.masonm = {
     isNormalUser = true;
     extraGroups = [
@@ -93,9 +49,6 @@
       "docker"
     ];
     shell = pkgs.zsh;
-    #packages = with pkgs; [
-    #  tree
-    #];
   };
 
   programs = {
@@ -154,30 +107,6 @@
     yacreader
     libsForQt5.qt5.qtimageformats # webp support for yacreader
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

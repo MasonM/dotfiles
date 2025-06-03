@@ -64,6 +64,7 @@
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
     displayManager.sddm.wayland.enable = true;
+    printing.enable = true;
     pipewire = {
       enable = true;
       pulse.enable = true;

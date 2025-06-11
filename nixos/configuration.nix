@@ -72,6 +72,22 @@
     jq
     bat
     unzip
+    ripgrep
+
+    # documents
+    ghostscript
+    libreoffice
+    hunspell
+    hunspellDicts.en_US
+    lyx
+    (texliveBasic.withPackages (ps: with ps; [
+      # resume
+      breakurl
+      enumitem
+      microtype
+      lmodern
+      xkeyval
+    ]))
 
     # system
     borgbackup
@@ -82,6 +98,8 @@
     git
     delta
     gh
+    skopeo
+    mtr
 
     # languages
     go
@@ -91,9 +109,8 @@
     # desktop
     keepassxc
     vscode
-    libreoffice
     workrave
-    lyx
+    zoom-us
     kdePackages.partitionmanager
 
     # desktop - internet

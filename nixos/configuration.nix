@@ -100,6 +100,7 @@
     delta
     gh
     mtr
+    devenv
 
     # Kubernetes
     skopeo

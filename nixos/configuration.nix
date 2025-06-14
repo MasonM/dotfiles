@@ -96,10 +96,17 @@
     # development
     gnumake
     git
+    subversion
     delta
     gh
-    skopeo
     mtr
+
+    # Kubernetes
+    skopeo
+    k3d
+    minikube
+    kind
+    helm
 
     # languages
     go

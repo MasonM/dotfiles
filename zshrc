@@ -12,4 +12,4 @@ unsetopt hist_ignore_dups
 setopt hist_find_no_dups
 setopt nosharehistory
 unsetopt correctall
-
+eval "$(atuin init --disable-up-arrow zsh)"

@@ -35,6 +35,8 @@
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
     displayManager.sddm.wayland.enable = true;
+    # Get /bin/bash working: https://unix.stackexchange.com/a/788456
+    envfs.enable = true;
     printing.enable = true;
     pipewire = {
       enable = true;
@@ -121,6 +123,7 @@
     workrave
     zoom-us
     kdePackages.partitionmanager
+    kdePackages.spectacle
 
     # desktop - internet
     google-chrome

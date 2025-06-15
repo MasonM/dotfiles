@@ -73,6 +73,7 @@
     bat
     unzip
     ripgrep
+    btop
 
     # documents
     ghostscript

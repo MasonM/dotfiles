@@ -107,13 +107,15 @@
 
     # Kubernetes
     skopeo
+    kubectl
     k3d
     minikube
     kind
-    helm
+    kubernetes-helm
 
     # languages
     go
+    delve
     python3
     php
 

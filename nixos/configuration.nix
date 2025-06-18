@@ -113,6 +113,7 @@
     minikube
     kind
     kubernetes-helm
+    telepresence2
 
     # languages
     go

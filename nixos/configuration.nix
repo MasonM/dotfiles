@@ -90,6 +90,7 @@ in
     unzip
     ripgrep
     btop
+    xclip
 
     # documents
     ghostscript
@@ -134,6 +135,7 @@ in
     delve
     python3
     php
+    rustup
 
     # desktop
     keepassxc

@@ -67,8 +67,11 @@ in
     zsh.enable = true;
     firefox.enable = true;
     steam.enable = true;
-    vim.enable = true;
     ssh.startAgent = true;
+    vim = {
+      enable = true;
+      package = pkgs.vim-full;
+    };
   };
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;

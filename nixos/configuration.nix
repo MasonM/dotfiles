@@ -90,7 +90,7 @@ in
     unzip
     ripgrep
     btop
-    xclip
+    lshw
 
     # documents
     ghostscript
@@ -128,14 +128,12 @@ in
     minikube
     kind
     kubernetes-helm
-    telepresence2
 
     # languages
     go
     delve
     python3
     php
-    rustup
 
     # desktop
     keepassxc

@@ -153,6 +153,7 @@ in
     gimp3
     yacreader
     libsForQt5.qt5.qtimageformats # webp support for yacreader
+    spotify
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,

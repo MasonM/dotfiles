@@ -70,6 +70,7 @@ in
     ssh.startAgent = true;
     vim = {
       enable = true;
+      defaultEditor = true;
       package = pkgs.vim-full;
     };
   };
@@ -91,6 +92,7 @@ in
     ripgrep
     btop
     lshw
+    inetutils
 
     # documents
     ghostscript

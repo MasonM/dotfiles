@@ -2,11 +2,8 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, unstable, ... }:
 
-let
- unstableTarball = fetchTarball "https://github.com/NixOS/nixpkgs/archive/c539ae8d21e49776966d714f82fba33b1fca78bc.tar.gz";
-in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -17,13 +14,9 @@ in
     ];
   boot.kernelPackages = pkgs.linuxPackages_6_13;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config = {
     allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable = import unstableTarball {
-        config = config.nixpkgs.config;
-      };
-    };
   };
 
   boot = {

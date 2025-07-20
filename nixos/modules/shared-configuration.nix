@@ -10,6 +10,11 @@
     allowUnfree = true;
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   time.timeZone = "America/Los_Angeles";
 
   services = {

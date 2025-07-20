@@ -22,11 +22,6 @@
     initrd.luks.devices.crypted.device = "/dev/disk/by-uuid/1cd25d93-9e12-4bd6-8840-1541e50b439a";
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #

@@ -31,7 +31,7 @@
 
     git = {
       enable = true;
-      includes = [{ path = "~/src/dotfiles/gitconfig"; }];
+      includes = [{ path = "~/src/dotfiles/nixos/configs/gitconfig"; }];
     };
 
     atuin = {

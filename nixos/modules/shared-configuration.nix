@@ -55,7 +55,6 @@
     # general CLI tools
     wget
     atuin
-    tmux
     fzf
     gnupg
     jq
@@ -87,7 +86,6 @@
 
     # development
     gnumake
-    git
     subversion
     delta
     gh

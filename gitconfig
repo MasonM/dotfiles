@@ -3,7 +3,6 @@
         pager = delta --diff-so-fancy --max-line-length 0
 [user]
         name = Mason Malone
-        #email = mason@masonm.org
         email = 651224+MasonM@users.noreply.github.com
 [http]
         sslVerify=false

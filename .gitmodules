@@ -1,6 +1,3 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/MasonM/oh-my-zsh.git
-[submodule "fzf"]
-	path = fzf
-	url = https://github.com/junegunn/fzf.git

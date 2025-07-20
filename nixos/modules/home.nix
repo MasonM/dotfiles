@@ -21,6 +21,19 @@
     includes = [{ path = "~/src/dotfiles/gitconfig"; }];
   };
 
+  programs.atuin = {
+    enable = true;
+    settings = {
+      update_check = false;
+      search_mode = "skim";
+      enter_accept = false;
+      keymap_mode = "vim-insert";
+      sync = {
+        records = true;
+      };
+    };
+  };
+
   programs.tmux = {
     enable = true;
     keyMode = "vi";

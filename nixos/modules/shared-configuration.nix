@@ -54,7 +54,6 @@
   environment.systemPackages = with pkgs; [
     # general CLI tools
     wget
-    atuin
     fzf
     gnupg
     jq

@@ -26,24 +26,9 @@ set pastetoggle=<C-P>
 let g:vimwiki_url_maxsave = 0
 let g:vimwiki_list = [{'path': '~/src/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
-let g:pyindent_open_paren = '&sw'
-let g:pyindent_continue = '&sw'
-
-let g:ale_linters_explicit = 1
-"\   'javascript': ['eslint'],
-let g:ale_linters = {
-\   'javascript': [],
-\   'php': [],
-\}
-
 execute pathogen#infect()
 
 " Show nbsp and other ws:https://vi.stackexchange.com/a/17701
 set list listchars=tab:»\ ,nbsp:⎵,precedes:<,extends:>
 
 vnoremap <C-J> :!fmt -80<CR>
-
-au BufNewFile,BufRead *.applescript set filetype=applescript
-au BufNewFile,BufRead *.js6 set filetype=javascript
-au BufNewFile,BufRead *.xt  set filetype=xt
-au BufNewFile,BufRead Jenkinsfile*  set filetype=groovy

@@ -5,21 +5,25 @@
   };
   outputs = { self, nixpkgs, nixpkgs-unstable }:
   let
-    system = "x86_64-linux";
-    lib = nixpkgs.lib;
     overlay-unstable = final: prev: {
       unstable = import nixpkgs-unstable {
-        inherit system;
+        inherit (prev) system;
         config.allowUnfree = true;
       };
     };
+
+    mkNixosConfiguration = { system, conf }:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+          conf
+        ];
+      };
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-        ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-       ./hosts/desktop/configuration.nix
-      ];
+    nixosConfigurations.nixos = mkNixosConfiguration {
+      system = "x86_64-linux";
+      conf = ./hosts/desktop/configuration.nix;
     };
   };
 }

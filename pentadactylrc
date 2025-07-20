@@ -1,8 +1,0 @@
-"hg6938
-
-loadplugins '\.(js|penta)$'
-group user
-
-set go+=T
-
-" vim: set ft=pentadactyl:

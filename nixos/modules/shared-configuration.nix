@@ -45,6 +45,12 @@
     firefox.enable = true;
     steam.enable = true;
     ssh.startAgent = true;
+    bash.interactiveShellInit = ''
+      # append to the history file, don't overwrite it
+      shopt -s histappend
+      set -o vi
+      export EDITOR='vim'
+    '';
   };
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;

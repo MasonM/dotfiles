@@ -40,6 +40,10 @@
         system = "x86_64-linux";
         conf = ./hosts/desktop/configuration.nix;
       };
+      motile = mkNixosConfiguration {
+        system = "x86_64-linux";
+        conf = ./hosts/motile/configuration.nix;
+      };
     };
   };
 }

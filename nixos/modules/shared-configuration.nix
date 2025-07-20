@@ -97,6 +97,7 @@
     mtr
     devenv
     pkgs.unstable.claude-code
+    cloc
 
     # Kubernetes
     skopeo

@@ -16,32 +16,46 @@
     stateVersion = "25.05";
   };
 
-  programs.git = {
-    enable = true;
-    includes = [{ path = "~/src/dotfiles/gitconfig"; }];
-  };
+  programs = {
+    vim = {
+      enable = true;
+      defaultEditor = true;
+      plugins = with pkgs.vimPlugins; [
+        vimwiki
+        syntastic
+        tabular
+        vim-unimpaired
+      ];
+      extraConfig = builtins.readFile ../configs/vimrc;
+    };
 
-  programs.atuin = {
-    enable = true;
-    settings = {
-      update_check = false;
-      search_mode = "skim";
-      enter_accept = false;
-      keymap_mode = "vim-insert";
-      sync = {
-        records = true;
+    git = {
+      enable = true;
+      includes = [{ path = "~/src/dotfiles/gitconfig"; }];
+    };
+
+    atuin = {
+      enable = true;
+      settings = {
+        update_check = false;
+        search_mode = "skim";
+        enter_accept = false;
+        keymap_mode = "vim-insert";
+        sync = {
+          records = true;
+        };
       };
     };
-  };
 
-  programs.tmux = {
-    enable = true;
-    keyMode = "vi";
-    escapeTime = 0;
-    historyLimit = 10000;
-    prefix = "C-a";
-    extraConfig = builtins.readFile ../configs/tmux.conf;
-  };
+    tmux = {
+      enable = true;
+      keyMode = "vi";
+      escapeTime = 0;
+      historyLimit = 10000;
+      prefix = "C-a";
+      extraConfig = builtins.readFile ../configs/tmux.conf;
+    };
 
-  programs.home-manager.enable = true;
+    home-manager.enable = true;
+  };
 }

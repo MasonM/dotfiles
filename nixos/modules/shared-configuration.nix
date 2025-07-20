@@ -40,11 +40,6 @@
     firefox.enable = true;
     steam.enable = true;
     ssh.startAgent = true;
-    vim = {
-      enable = true;
-      defaultEditor = true;
-      package = pkgs.vim-full;
-    };
   };
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;

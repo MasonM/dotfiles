@@ -18,7 +18,7 @@
       inherit system;
       modules = [
         ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-       ./configuration.nix
+       ./hosts/desktop/configuration.nix
       ];
     };
   };

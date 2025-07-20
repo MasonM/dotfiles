@@ -56,6 +56,11 @@
       extraConfig = builtins.readFile ../configs/tmux.conf;
     };
 
+    zsh = {
+      enable = true;
+      initContent = builtins.readFile ../configs/zshrc;
+    };
+
     home-manager.enable = true;
   };
 }

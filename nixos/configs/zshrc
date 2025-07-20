@@ -1,4 +1,4 @@
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/src/dotfiles/oh-my-zsh
 ZSH_THEME="mason"
 # Disable this for performance: https://github.com/ohmyzsh/ohmyzsh/issues/9055#issuecomment-1049812446
 ZSH_DISABLE_COMPFIX="true"

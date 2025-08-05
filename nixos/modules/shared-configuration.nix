@@ -45,6 +45,8 @@
     firefox.enable = true;
     steam.enable = true;
     ssh.startAgent = true;
+    # Mainly for VSCode extensions (e.g. Java)
+    nix-ld.enable = true;
     bash.interactiveShellInit = ''
       # append to the history file, don't overwrite it
       shopt -s histappend
@@ -112,6 +114,7 @@
     delve
     python3
     php
+    openjdk
 
     # desktop
     keepassxc

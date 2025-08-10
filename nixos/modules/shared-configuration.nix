@@ -111,6 +111,7 @@
 
     # languages
     go
+    golangci-lint
     delve
     python3
     php

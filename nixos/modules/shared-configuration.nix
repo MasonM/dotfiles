@@ -136,6 +136,7 @@
     yacreader
     libsForQt5.qt5.qtimageformats # webp support for yacreader
     spotify
+    calibre
   ];
 }
 

@@ -61,7 +61,6 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     # general CLI tools
-    wget
     fzf
     gnupg
     jq
@@ -69,8 +68,6 @@
     unzip
     ripgrep
     btop
-    lshw
-    inetutils
 
     # documents
     ghostscript
@@ -88,6 +85,7 @@
     ]))
 
     # system
+    lshw
     borgbackup
     lm_sensors
 
@@ -96,10 +94,15 @@
     subversion
     delta
     gh
-    mtr
     devenv
     pkgs.unstable.claude-code
     cloc
+
+    # networking
+    wget
+    mtr
+    openssl
+    inetutils
 
     # Kubernetes
     skopeo

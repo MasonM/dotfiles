@@ -111,6 +111,7 @@
     minikube
     kind
     kubernetes-helm
+    yq-go
 
     # languages
     go

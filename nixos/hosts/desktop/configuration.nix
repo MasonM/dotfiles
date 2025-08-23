@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       # Workaround system freeze:
       # https://wiki.nixos.org/wiki/AMD_GPU#System_Hang_with_Vega_Graphics_(and_select_GPUs)
-      ../../modules/amdgpu-patch.nix
+      ./amdgpu-patch.nix
       ../../modules/shared-configuration.nix
     ];
 

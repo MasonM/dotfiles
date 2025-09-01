@@ -134,13 +134,16 @@
     thunderbird
     transmission_4-qt
 
-    # desktop - multimedia
+    # multimedia
     vlc
     gimp3
     yacreader
     libsForQt5.qt5.qtimageformats # webp support for yacreader
     spotify
     calibre
+    ffmpeg
+    imagemagick
+    exiftool
   ];
 }
 

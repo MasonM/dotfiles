@@ -57,6 +57,11 @@
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
 
+  networking.hosts = {
+    # Argo Workflows: https://argo-workflows.readthedocs.io/en/latest/running-locally/#manual-installation
+    "127.0.0.1" = ["dex" "minio" "postgres" "mysql" "azurite"];
+  };
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [

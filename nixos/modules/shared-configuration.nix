@@ -117,6 +117,7 @@
     kind
     kubernetes-helm
     yq-go
+    kustomize
 
     # languages
     go

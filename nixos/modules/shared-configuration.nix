@@ -73,6 +73,7 @@
     unzip
     ripgrep
     btop
+    file
 
     # documents
     ghostscript

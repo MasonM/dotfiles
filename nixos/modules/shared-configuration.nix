@@ -97,6 +97,7 @@
 
     # development
     gnumake
+    binutils
     subversion
     delta
     gh

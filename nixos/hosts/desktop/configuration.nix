@@ -10,12 +10,12 @@
       ./hardware-configuration.nix
       # Workaround system freeze:
       # https://wiki.nixos.org/wiki/AMD_GPU#System_Hang_with_Vega_Graphics_(and_select_GPUs)
-      ./amdgpu-patch.nix
+      #./amdgpu-patch.nix
       ../../modules/shared-configuration.nix
     ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_13;
+    #kernelPackages = pkgs.linuxPackages_6_13;
     # Use the systemd-boot EFI boot loader.
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;

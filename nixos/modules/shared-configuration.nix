@@ -104,6 +104,7 @@
     devenv
     pkgs.unstable.claude-code
     cloc
+    shellcheck
 
     # networking
     wget

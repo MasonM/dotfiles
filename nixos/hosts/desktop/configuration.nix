@@ -16,6 +16,17 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_6_18;
+    # workaround for docker-in-docker issues: https://github.com/NixOS/nixpkgs/issues/451967
+    kernelPatches = [
+      {
+        name = "enable-legacy-iptables";
+        patch = null;
+        extraConfig = ''
+          NETFILTER_XTABLES_LEGACY y
+        '';
+      }
+    ];
+    kernelModules = [ "ip_tables" ];
     # Use the systemd-boot EFI boot loader.
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;

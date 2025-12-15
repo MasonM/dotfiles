@@ -105,6 +105,7 @@
     pkgs.unstable.claude-code
     cloc
     shellcheck
+    cmake
 
     # networking
     wget
@@ -129,6 +130,7 @@
     python3
     php
     openjdk
+    gcc
 
     # desktop
     keepassxc
@@ -153,6 +155,7 @@
     ffmpeg
     imagemagick
     exiftool
+    musescore
   ];
 }
 

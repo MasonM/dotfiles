@@ -8,9 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # Workaround system freeze:
-      # https://wiki.nixos.org/wiki/AMD_GPU#System_Hang_with_Vega_Graphics_(and_select_GPUs)
-      #./amdgpu-patch.nix
       ../../modules/shared-configuration.nix
     ];
 

@@ -91,6 +91,7 @@
         # Out-of-date
         # terraform-landscape
         dyff
+        terragrunt
 
         # languages
         maven

@@ -106,6 +106,7 @@
     cloc
     shellcheck
     cmake
+    godotPackages_4_6.godot
 
     # networking
     wget

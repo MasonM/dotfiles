@@ -157,6 +157,7 @@
     imagemagick
     exiftool
     musescore
+    blender
   ];
 }
 

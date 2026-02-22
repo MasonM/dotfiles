@@ -113,6 +113,7 @@
     mtr
     openssl
     inetutils
+    dnsutils
 
     # Kubernetes
     skopeo

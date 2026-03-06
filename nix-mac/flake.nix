@@ -74,7 +74,6 @@
         gh
 
         # DevOps tools
-        argo
         argocd
         argo-rollouts
         kubernetes-helm
@@ -100,7 +99,7 @@
         go
         php
         php82Packages.composer
-        nodejs_20
+        nodejs_22
         (python3.withPackages(ps: with ps; [ packaging pip pyyaml ]))
 
         # AV

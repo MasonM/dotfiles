@@ -85,7 +85,8 @@
         dive
         kind
         k9s
-        kubelogin
+        #https://github.com/Azure/kubelogin/issues/640
+        #kubelogin
         tfswitch
         # Out-of-date
         # terraform-landscape

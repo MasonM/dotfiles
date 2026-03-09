@@ -159,6 +159,9 @@
     exiftool
     musescore
     blender
+    poppler-utils
+    openscad-unstable
+    inkscape
   ];
 }
 

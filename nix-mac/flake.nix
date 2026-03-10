@@ -74,6 +74,7 @@
         gh
 
         # DevOps tools
+        argo-workflows
         argocd
         argo-rollouts
         kubernetes-helm

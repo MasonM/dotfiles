@@ -10,6 +10,9 @@
     allowUnfree = true;
   };
 
+  # Allow debugging using vscode and dlv
+  boot.kernel.sysctl."kernel.yama.ptrace_scope" = 0;
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;

@@ -90,9 +90,10 @@
         #kubelogin
         tfswitch
         # Out-of-date
-        # terraform-landscape
+        terraform-landscape
         dyff
         terragrunt
+        azure-cli
 
         # languages
         maven

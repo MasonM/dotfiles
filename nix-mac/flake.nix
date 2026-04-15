@@ -104,6 +104,7 @@
         php82Packages.composer
         nodejs_22
         (python3.withPackages(ps: with ps; [ packaging pip pyyaml ]))
+        uv
 
         # AV
         ffmpeg

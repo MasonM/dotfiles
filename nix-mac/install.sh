@@ -1,4 +1,4 @@
 #!/bin/sh
 set -ex
 #nix profile install .
-nix profile upgrade 0
+nix profile upgrade --all

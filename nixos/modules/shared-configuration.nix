@@ -137,6 +137,7 @@
     php
     openjdk
     gcc
+    uv
 
     # desktop
     keepassxc

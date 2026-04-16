@@ -48,6 +48,7 @@
     firefox.enable = true;
     steam.enable = true;
     ssh.startAgent = true;
+    direnv.enable = true;
     # Mainly for VSCode extensions (e.g. Java)
     nix-ld.enable = true;
     bash.interactiveShellInit = ''

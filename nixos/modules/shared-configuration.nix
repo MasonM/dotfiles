@@ -51,6 +51,44 @@
     direnv.enable = true;
     # Mainly for VSCode extensions (e.g. Java)
     nix-ld.enable = true;
+    # https://wiki.nixos.org/wiki/Nix-ld
+    nix-ld.libraries = with pkgs; [
+      # defaults
+      zlib
+      zstd
+      stdenv.cc.cc
+      curl
+      openssl
+      attr
+      libssh
+      bzip2
+      libxml2
+      acl
+      libsodium
+      util-linux
+      xz
+      systemd
+
+      # additions
+      xorg.libXcomposite
+      xorg.libXtst
+      xorg.libXrandr
+      xorg.libXext
+      xorg.libX11
+      xorg.libXfixes
+      libGL
+      libva
+      pipewire
+      xorg.libxcb
+      xorg.libXdamage
+      xorg.libxshmfence
+      xorg.libXxf86vm
+      libelf
+
+      # build123/ocp-vscode
+      libxrender
+      expat
+    ];
     bash.interactiveShellInit = ''
       # append to the history file, don't overwrite it
       shopt -s histappend

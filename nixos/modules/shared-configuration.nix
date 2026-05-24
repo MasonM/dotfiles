@@ -123,6 +123,7 @@
     hunspell
     hunspellDicts.en_US
     lyx
+    hugo
     (texliveBasic.withPackages (ps: with ps; [
       # resume
       breakurl
@@ -149,6 +150,7 @@
     shellcheck
     cmake
     godotPackages_4_6.godot
+    claude-code
 
     # networking
     wget
@@ -184,6 +186,8 @@
     zoom-us
     kdePackages.partitionmanager
     kdePackages.spectacle
+    wine
+    winetricks
 
     # desktop - internet
     google-chrome

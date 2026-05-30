@@ -193,6 +193,7 @@
     google-chrome
     thunderbird
     transmission_4-qt
+    qbittorrent
 
     # multimedia
     vlc

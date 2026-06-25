@@ -28,6 +28,7 @@
         gettext
         gnupg
         vim
+        neovim
         wdiff
         aspell
         gnused
@@ -37,6 +38,7 @@
         moreutils
         brotli
         chezmoi
+        hyperfine
 
         # network
         wget
@@ -98,6 +100,7 @@
         # languages
         maven
         #gradle_7
+        javaPackages.compiler.openjdk17
         groovy
         go
         php

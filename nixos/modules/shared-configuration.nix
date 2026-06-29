@@ -27,7 +27,13 @@
     displayManager.sddm.wayland.enable = true;
     # Get /bin/bash working: https://unix.stackexchange.com/a/788456
     envfs.enable = true;
-    printing.enable = true;
+    printing = {
+      enable = true;
+      drivers = [
+        # Brother DCP-L2540DW
+        pkgs.brlaser
+      ];
+    };
     pipewire = {
       enable = true;
       pulse.enable = true;

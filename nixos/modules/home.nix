@@ -14,6 +14,12 @@
     # the home Manager release notes for a list of state version
     # changes in each release.
     stateVersion = "25.05";
+    file.".local/share/OpenSCAD/libraries/BOSL2".source = pkgs.fetchFromGitHub {
+      owner = "BelfrySCAD";
+      repo = "BOSL2";
+      rev = "v2.0.747";
+      hash = "sha256-3MGHTzMRJkhh/R83fD1PJwnR+RGgcFLyuEY3aTPx9jE=";
+    };
   };
 
   programs = {

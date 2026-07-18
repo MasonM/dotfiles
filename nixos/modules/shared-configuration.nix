@@ -122,6 +122,7 @@
     ripgrep
     btop
     file
+    bc
 
     # documents
     ghostscript

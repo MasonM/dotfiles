@@ -195,6 +195,7 @@
     kdePackages.spectacle
     wine
     winetricks
+    appimage-run
 
     # desktop - internet
     google-chrome

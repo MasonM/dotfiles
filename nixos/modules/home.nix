@@ -20,6 +20,12 @@
       rev = "v2.0.747";
       hash = "sha256-3MGHTzMRJkhh/R83fD1PJwnR+RGgcFLyuEY3aTPx9jE=";
     };
+    file.".local/share/OpenSCAD/libraries/lasercut".source = pkgs.fetchFromGitHub {
+      owner = "bmsleight";
+      repo = "lasercut";
+      rev = "a9815be6fcca9bc46411409aa503bbb60921264a";
+      hash = "sha256-Co/h04zvLP3CjQBA5A+3ksCn/E544QMxEhNW4vAWYWU=";
+    };
   };
 
   programs = {

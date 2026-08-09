@@ -196,6 +196,7 @@
     wine
     winetricks
     appimage-run
+    winboat
 
     # desktop - internet
     google-chrome

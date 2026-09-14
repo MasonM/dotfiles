@@ -39,6 +39,7 @@
         brotli
         chezmoi
         hyperfine
+        github-copilot-cli
 
         # network
         wget
@@ -91,7 +92,6 @@
         #https://github.com/Azure/kubelogin/issues/640
         #kubelogin
         tfswitch
-        # Out-of-date
         terraform-landscape
         dyff
         terragrunt

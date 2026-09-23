@@ -39,7 +39,6 @@
         brotli
         chezmoi
         hyperfine
-        github-copilot-cli
 
         # network
         wget

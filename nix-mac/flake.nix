@@ -69,6 +69,7 @@
         tmux
         fzf
         shellcheck
+        zellij
         
         # VCS
         git
@@ -95,6 +96,7 @@
         dyff
         terragrunt
         azure-cli
+        awscli2
 
         # languages
         maven

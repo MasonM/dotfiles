@@ -95,7 +95,9 @@
         terraform-landscape
         dyff
         terragrunt
-        azure-cli
+
+        # breaks due to python3.14-fabric-3.2.3
+        #azure-cli
         awscli2
 
         # languages
@@ -105,7 +107,7 @@
         groovy
         go
         php
-        php82Packages.composer
+        php84Packages.composer
         nodejs_22
         (python3.withPackages(ps: with ps; [ packaging pip pyyaml ]))
         uv

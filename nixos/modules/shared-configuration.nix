@@ -196,7 +196,7 @@
     wine
     winetricks
     appimage-run
-    winboat
+    pkgs.unstable.winboat
 
     # desktop - internet
     google-chrome
